@@ -1,0 +1,36 @@
+Physics 2D Extensions Changelog
+
+================================
+1.2.0f1
+================================
+* [Added] Angle Joint 2D
+* [Added] Distance Joint 2D
+* [Added] Friction Joint 2D
+* [Added] Gear Joint 2D
+* [Added] Hinge Joint 2D
+* [Added] Pulley Joint 2D
+* [Added] Slider Joint 2D
+* [Added] Spring Joint 2D
+* [Added] Visualization for all joints
+* [Added] More joints in the example scene
+* [Changed] Merged Rope Joint 2D with Distance Joint 2D (automatic upgrade)
+* [Changed] (post-4.3) Joints now take the user's physical constants from the Physics 2D Manager
+
+================================
+1.1.0f1
+================================
+* [Added] Support for future Unity versions
+* [Added] Auto Configure Connected Anchor, to easily configure anchors
+* [Added] Break Force and Break Torque to all extended joints, with an OnJointBreak message sent to game objects.
+* [Added] (4.3) Collide Connected Layers toggle - note that 4.3 only allows collision filtering by layer
+* [Added] (post-4.3) Collide Connected toggle - works the same as native joints
+* [Added] (4.3) Introduced the ability to change center of mass and rotational inertia through the API - just cast a Rigidbody2D to the Rigidbody2DExt class. This only affects these values for the purposes of calculating joints and buoyancy, not for the internal engine!
+* [Added] (4.3) Introduced methods for easily adding impulse forces to bodies (Rigidbody2DExt class)
+* [Changed] Renamed some classes in order to not conflict with future joint implementations in Unity - when opening a scene for the first time after updating, it will auto-upgrade all components
+* [Changed] Renamed the main namespace from ThinksquirrelSoftware to Thinksquirrel to reflect our other products - this will require some very minor code edits if you are using the API
+* [Fixed] Resolved issues with anchors not being consistent. All anchored joints have an anchor and connectedAnchor property, within the local space of the respective objects. Fixed anchors now behave similarly to Unity's native joints
+* [Fixed] Rope joints are no longer elastic
+* [Fixed] Weld joints now have configurable anchors, and more sensible defaults
+* [Fixed] (4.3) Center of mass now defaults at 0,0 (this is how 4.3 calculates center of mass by default)
+* [Fixed] Performance tweaks, should get a small performance boost in most cases
+* [Fixed] All inspectors now look more "native"
